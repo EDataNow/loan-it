@@ -7,7 +7,8 @@
 		        <tr>
 		          <div class="row">
 			          <div class='col s6'>
-			           <td> <i class="material-icons">stay_primary_portrait</i> {{device.working_device_name}}</td>
+			           <td> <i class="material-icons">stay_primary_portrait</i> {{device.working_device_name}} </td>
+			           <td (click)="incidentReport(device)"><a>Report</a></td>
 			          </div>
 			          <div class="col s6" align="right">
 			         	 <div *ngIf = 'device.loanee_name'>
