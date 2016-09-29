@@ -11,7 +11,7 @@ import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
 import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/devices', pathMatch: 'full' },
   { path: 'devices', component: DeviceComponent, canActivate: [LoggedInGuard]},
   { path: 'brokendevices', component: BrokenDeviceComponent, canActivate: [LoggedInGuard]},
   { path: 'createdevice', component: CreateDeviceComponent, canActivate: [LoggedInGuard] },
