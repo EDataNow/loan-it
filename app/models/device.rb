@@ -57,10 +57,6 @@ class Device < ApplicationRecord
   	active_loan.present? ? active_loan.id : nil
   end
 
-  def device_incident_reports
-  	incident_reports
-  end
-
 
 	# def is_usable?
 	# 	true if (self.incident_reports.count != 0) && self.incident_reports.last[:usable]
