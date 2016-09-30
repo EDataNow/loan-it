@@ -13,9 +13,9 @@ export class ApiService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  private GROUP_URL = 'https://tranquil-sea-87329.herokuapp.com/api/groups';
-  private DEVICE_CREATION_URL = 'https://tranquil-sea-87329.herokuapp.com/api/devices';
-  private USER_URL = 'https://tranquil-sea-87329.herokuapp.com/api/users'
+  private GROUP_URL = 'https://loan-it.herokuapp.com/api/groups';
+  private DEVICE_CREATION_URL = 'https://loan-it.herokuapp.com/api/devices';
+  private USER_URL = 'https://loan-it.herokuapp.com/api/users'
 
 
   constructor(private http: Http) { }
@@ -38,7 +38,7 @@ export class ApiService {
     }
 
     showDevice(id: number): Observable<Device> {
-    return this.http.get(`https://tranquil-sea-87329.herokuapp.com/api/devices/${id}`)
+    return this.http.get(`https://loan-it.herokuapp.com/api/devices/${id}`)
                .map((resp: Response) => resp.json())
                .catch(this.handleError);
     }
@@ -58,13 +58,13 @@ export class ApiService {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.post(`https://tranquil-sea-87329.herokuapp.com/api/devices/${id}/loans`, body, options)
+      return this.http.post(`https://loan-it.herokuapp.com/api/devices/${id}/loans`, body, options)
                       .map(this.extractData)
                       .catch(this.handleError);
     }
 
     relinquishLoan (id: number, loan_id: number): Observable<Device> {
-      return this.http.delete(`https://tranquil-sea-87329.herokuapp.com/api/devices/${id}/loans/${loan_id}`)
+      return this.http.delete(`https://loan-it.herokuapp.com/api/devices/${id}/loans/${loan_id}`)
                       .map(this.extractData)
                       .catch(this.handleError);
     }
