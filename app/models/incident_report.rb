@@ -30,4 +30,3 @@ class IncidentReport < ApplicationRecord
     try(:user).try(:name) || "No Name"
   end
 end
-

@@ -7,7 +7,8 @@ class Api::V1::DevicesController < ApplicationController
   end
 
   def show
-    respond_with Device.find(params[:id]).as_json(include: {incident_reports: {only: [:id, :description, :usable] }})
+    respond_with Device.find(params[:id]).as_json(include: {incident_reports: {only: [:id, :description, :usable],
+      methods: [:name]}})
   end
 
   def create

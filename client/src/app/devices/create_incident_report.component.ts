@@ -40,7 +40,4 @@ export class CreateIncidentReportComponent implements OnInit {
                        device  => this.all_groups.push(device));
     this.router.navigate(['/device/' + this.device_id + '/incidentreports']);
   }
-
-
-
 }
