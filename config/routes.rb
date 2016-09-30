@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :groups, only: [:index]
       resources :devices, only: [:index, :show, :create] do
         resources :loans, only: [:create, :update, :destroy]
+        resources :incident_reports, only: [:create]
       end
     end
   end

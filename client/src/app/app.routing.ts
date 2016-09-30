@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'brokendevices', component: BrokenDeviceComponent},
   { path: 'createdevice', component: CreateDeviceComponent },
   { path: 'device/:id', component: ShowDeviceComponent },
-  { path: 'login', component: LoginComponent },
+{ path: 'login', component: LoginComponent },
   { path: 'device/:id/createloan', component: CreateLoanComponent },
   { path: 'device/:id/relinquishloan/:loan_id', component: RelinquishLoanComponent },
   { path: 'device/:id/incidentreports', component: IncidentReportComponent}
