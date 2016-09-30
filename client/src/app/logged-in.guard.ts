@@ -14,7 +14,7 @@ export class LoggedInGuard implements CanActivate {
             return true;
         } else
         {
-            this.router.navigate(['/'])
+            this.router.navigateByUrl("/login", { skipLocationChange: true } )
             return false;
         }
     }
