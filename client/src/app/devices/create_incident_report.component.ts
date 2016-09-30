@@ -17,7 +17,7 @@ export class CreateIncidentReportComponent implements OnInit {
   all_groups: Device[] = [];
   user_id: number;
   device_id: number;
-
+  isUsable = true;
 
   ngOnInit() {
     this.api.obtainDevices()
@@ -35,7 +35,7 @@ export class CreateIncidentReportComponent implements OnInit {
   }
 
   createIncidentReport(description: string, usable: boolean) {
-    this.api.createIncidentReport(this.device_id, description, this.user_id, usable)
+    this.api.createIncidentReport(this.device_id, description, this.user_id, this.isUsable)
                      .subscribe(
                        device  => this.all_groups.push(device));
     this.router.navigate(['/device/' + this.device_id + '/incidentreports']);

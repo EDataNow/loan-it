@@ -2,8 +2,8 @@
 <input #ReportDescription />
 
 <p>
-      <input type="checkbox" id="usable" checked="checked" #Usable />
-      <label for="usable">Usable</label>
+     <input type="checkbox" id="usable" [checked]="isUsable" (change)="isUsable = $event.target.checked" #Usable />
+     <label for="usable">Usable</label>
 </p>
 
 
