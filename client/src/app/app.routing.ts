@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: 'device/:id/createloan', component: CreateLoanComponent },
   { path: 'device/:id/relinquishloan/:loan_id', component: RelinquishLoanComponent },
   { path: 'device/:id/incidentreports', component: IncidentReportComponent}
-
 ];
 
 export const routing = RouterModule.forRoot(routes);
