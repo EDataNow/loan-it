@@ -7,6 +7,7 @@ import { CreateLoanComponent } from './devices/create_loan.component'
 import { ShowDeviceComponent } from './devices/show_device.component'
 import { LoginComponent } from './login.component';
 import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
+import { IncidentReportComponent } from './devices/incident_report.component';
 
 import { LoggedInGuard } from './logged-in.guard';
 
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'device/:id/createloan', component: CreateLoanComponent },
   { path: 'device/:id/relinquishloan/:loan_id', component: RelinquishLoanComponent },
+  { path: 'device/:id/incidentreports', component: IncidentReportComponent}
+
 ];
 
 export const routing = RouterModule.forRoot(routes);
