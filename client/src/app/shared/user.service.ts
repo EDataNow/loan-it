@@ -16,7 +16,7 @@ export class UserService {
 
         return this.http
             .post(
-                'http://localhost:3000/users/sign_in',
+                'https://tranquil-sea-87329.herokuapp.com/users/sign_in',
                 JSON.stringify({ email, password }),
                 { headers }
             )
