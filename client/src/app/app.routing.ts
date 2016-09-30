@@ -12,7 +12,7 @@ import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/devices', pathMatch: 'full' },
-  { path: 'devices', component: DeviceComponent, canActivate: [LoggedInGuard]},
+  { path: 'devices', component: DeviceComponent},
   { path: 'brokendevices', component: BrokenDeviceComponent, canActivate: [LoggedInGuard]},
   { path: 'createdevice', component: CreateDeviceComponent, canActivate: [LoggedInGuard] },
   { path: 'device/:id', component: ShowDeviceComponent, canActivate: [LoggedInGuard] },
