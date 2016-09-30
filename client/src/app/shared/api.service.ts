@@ -73,6 +73,16 @@ export class ApiService {
                       .catch(this.handleError);
     }
 
+    createIncidentReport (id: number, description: string, user_id: number, usable: boolean): Observable<Device> {
+      let body = JSON.stringify({ description, user_id, usable});
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.post(`http://localhost:3000/api/devices/${id}/incident_reports`, body, options)
+                      .map(this.extractData)
+                      .catch(this.handleError);
+    }
+
     handleError(error: any) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');

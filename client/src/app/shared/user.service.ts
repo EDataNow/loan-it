@@ -16,7 +16,7 @@ export class UserService {
 
         return this.http
             .post(
-                'https://tranquil-sea-87329.herokuapp.com/users/sign_in',
+                'https://loan-it.herokuapp.com/users/sign_in',
                 JSON.stringify({ email, password }),
                 { headers }
             )
@@ -25,6 +25,8 @@ export class UserService {
                 if (res.success) {
                     localStorage.setItem('auth_token', res.auth_token);
                     localStorage.setItem('user_name', res.user_name);
+                    localStorage.setItem('user_id', res.user_id);
+                    console.log(res);
                     this.loggedIn = true;
             }
                 return res.success;

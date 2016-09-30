@@ -13,6 +13,7 @@ import { CreateLoanComponent } from './devices/create_loan.component';
 import { ShowDeviceComponent } from './devices/show_device.component';
 import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
 import { IncidentReportComponent } from './devices/incident_report.component';
+import { CreateIncidentReportComponent } from './devices/create_incident_report.component';
 
 
 import { LoginComponent } from './login.component';
@@ -38,7 +39,8 @@ import { routing } from './app.routing';
     CreateLoanComponent,
     ShowDeviceComponent,
     RelinquishLoanComponent,
-    IncidentReportComponent
+    IncidentReportComponent,
+    CreateIncidentReportComponent
   ],
   providers: [
     ApiService, LoggedInGuard, UserService

@@ -36,4 +36,8 @@ export class DeviceComponent implements OnInit {
   incidentReport(device: Device) {
     this.router.navigate(['/device/' + device.id + '/incidentreports']);
   }
+
+  createIncidentReport(device: Device) {
+    this.router.navigate(['/device/' + device.id + '/createincidentreport']);
+  }
 }

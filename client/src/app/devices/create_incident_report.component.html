@@ -1,0 +1,15 @@
+<h3 align="center">Description:</h3>
+<input #ReportDescription />
+
+<p>
+      <input type="checkbox" id="usable" checked="checked" #Usable />
+      <label for="usable">Usable</label>
+</p>
+
+
+<button class="waves-effect waves-light btn" (click)="createIncidentReport(ReportDescription.value, Usable.value); ReportDescription.value=''">
+  Create Incident Report
+</button>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+
