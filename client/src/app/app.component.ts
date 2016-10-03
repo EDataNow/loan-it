@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './shared/user.service';
+import { Http } from '@angular/http'
 
 @Component({
   selector: 'my-app', // <my-app></my-app>
+  providers: [UserService, Http],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -13,7 +15,7 @@ export class AppComponent {
   private userNameArray: Array<string> = new Array<string>();
   private userName: Array<string>
 
-  constructor(private userService: UserService, private router: Router) { 
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit() {
