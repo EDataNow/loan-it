@@ -11,12 +11,15 @@ import { UserService } from './shared/user.service';
 export class AppComponent {
 
   private userNameArray: Array<string> = new Array<string>();
-  
-  constructor(private userService: UserService, private router: Router) { }
+  private userName: Array<string>
+
+  constructor(private userService: UserService, private router: Router) { 
+  }
 
   ngOnInit() {
     this.userService.nameCollection$.subscribe(updatedName => {
       this.userNameArray = updatedName;
   });
-  } 
+  this.userService.loadName();
+  }
 }

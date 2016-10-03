@@ -52,7 +52,6 @@ export class UserService {
         this.loggedIn = false;
         this.nameCollection.push('');
         this.nameCollectionObserver.next(this.nameCollection);
-        console.log(this.nameCollection);
         this.router.navigate(['login']);
     }
 
