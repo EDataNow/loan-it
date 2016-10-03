@@ -8,9 +8,9 @@
           <li *ngIf="userService.isLoggedIn()"><a [routerLink]="['brokendevices']">Broken Devices</a></li>
           <li *ngIf="userService.isLoggedIn()"><a [routerLink]="['createdevice']">Create Device</a></li>
         </div>
-        <div *ngIf="userName" class="right hide-on-med-and-down col s6">
-          <li> Hello {{userName}}!</li>
-        </div>
+          <div *ngIf="userNameArray.slice(-1)[0] != ''" class="right hide-on-med-and-down col s6">
+            <li *ngFor="let name of userNameArray.slice(-1)"> Welcome {{ name }} </li>
+          </div>
       </ul>
     </div>
   </nav>
