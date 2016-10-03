@@ -14,9 +14,9 @@ import { ShowDeviceComponent } from './devices/show_device.component';
 import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
 import { IncidentReportComponent } from './devices/incident_report.component';
 
-
 import { LoginComponent } from './login.component';
 
+import { LoginCheck } from './login.check';
 import { LoggedInGuard } from './logged-in.guard';
 import { ApiService, UserService } from './shared';
 
@@ -41,7 +41,7 @@ import { routing } from './app.routing';
     IncidentReportComponent
   ],
   providers: [
-    ApiService, LoggedInGuard, UserService
+    ApiService, LoggedInGuard, UserService, LoginCheck
   ],
   bootstrap: [AppComponent]
 })

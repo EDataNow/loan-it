@@ -6,17 +6,16 @@ import { Router } from '@angular/router';
 
 
 @Injectable()
-export class LoggedInGuard implements CanActivate {
+export class LoginCheck implements CanActivate {
     constructor(private user: UserService, private router: Router) {}
 
     canActivate() {
           if (this.user.isLoggedIn()) {
-            return true;
+            this.router.navigateByUrl("/devices", { skipLocationChange: true } )
+            return false;
         } else
         {
-            this.router.navigateByUrl("/login", { skipLocationChange: true } )
-            return false;
+            return true;
         }
     }
 }
-
