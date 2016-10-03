@@ -7,7 +7,7 @@
 		        <tr>
 		          <div class="row">
 			          <div class='col s6'>
-			           <td> <i class="material-icons">stay_primary_portrait</i> {{device.working_device_name}} </td>
+			           <td> <i class="material-icons">stay_current_portrait</i> {{device.working_device_name}} </td>
 			           <td (click)="loanHistory(device)"><a>Loan History</a></td>
 			          </div>
 			          <div class="col s6" align="right">
@@ -17,7 +17,7 @@
 				          </div>
 				         <div *ngIf = '!device.loanee_name'>
 				           <td style="color: green">Unassigned</td>
-				           <td (click)="createLoan(device)"><a><i class="material-icons">forward</i></a></td>
+				           <td (click)="createLoan(device)"><a><i class="material-icons">add_circle_outline</i></a></td>
 				         </div>
 				        </div>
 			        </div>
