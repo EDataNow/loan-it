@@ -33,14 +33,6 @@ export class DeviceComponent implements OnInit {
     this.router.navigate(['/device/' + device.id + '/relinquishloan/' + device.loan_id]);
   }
 
-  incidentReport(device: Device) {
-    this.router.navigate(['/device/' + device.id + '/incidentreports']);
-  }
-
-  createIncidentReport(device: Device) {
-    this.router.navigate(['/device/' + device.id + '/createincidentreport']);
-  }
-
   loanHistory(device: Device) {
     this.router.navigate(['/device/' + device.id + '/loanhistory']);
   }

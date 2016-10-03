@@ -24,5 +24,13 @@ export class LoanHistoryComponent implements OnInit {
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) {
     // Do something with api
   }
+
+  incidentReport(device: Device) {
+    this.router.navigate(['/device/' + device.id + '/incidentreports']);
+  }
+
+  createIncidentReport(device: Device) {
+    this.router.navigate(['/device/' + device.id + '/createincidentreport']);
+  }
 }
 

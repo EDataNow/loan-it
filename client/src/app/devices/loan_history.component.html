@@ -1,3 +1,4 @@
+<h2 align="center"> Loan History for {{device?.name}}</h2>
 <div *ngFor='let loan of device?.loans'>
 	<ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
     <li>
@@ -6,5 +7,20 @@
     </li>
   </ul>
 </div>
+
+<!-- <h6 align="center" (click)="createIncidentReport(device)">Create Incident Report</h6>
+<h6 align="center" (click)="incidentReport(device)">All Reports</h6> -->
+
+<div class="row" align="center">
+	<button class="waves-effect waves-light btn" (click)="createIncidentReport(device)">New Incident Report</button>
+</div>
+
+<div class="row" align="center">
+	<button class="waves-effect waves-light btn" (click)="incidentReport(device)">All Reports</button>
+</div>
+
+
+
+
 
 
