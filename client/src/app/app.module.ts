@@ -4,6 +4,8 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import {MaterializeDirective} from "angular2-materialize";
+
 
 import { AppComponent } from './app.component';
 import { DeviceComponent } from './devices/device.component';
@@ -14,6 +16,8 @@ import { ShowDeviceComponent } from './devices/show_device.component';
 import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
 import { IncidentReportComponent } from './devices/incident_report.component';
 import { CreateIncidentReportComponent } from './devices/create_incident_report.component';
+import { LoanHistoryComponent } from './devices/loan_history.component';
+
 
 
 import { LoginComponent } from './login.component';
@@ -32,6 +36,7 @@ import { routing } from './app.routing';
   ],
   declarations: [
     AppComponent,
+    MaterializeDirective,
     DeviceComponent,
     BrokenDeviceComponent,
     LoginComponent,
@@ -40,7 +45,8 @@ import { routing } from './app.routing';
     ShowDeviceComponent,
     RelinquishLoanComponent,
     IncidentReportComponent,
-    CreateIncidentReportComponent
+    CreateIncidentReportComponent,
+    LoanHistoryComponent
   ],
   providers: [
     ApiService, LoggedInGuard, UserService

@@ -1,4 +1,37 @@
 <div *ngFor='let report of device?.incident_reports'>
-  {{report.description}}
-  {{report.name}}
+<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          </li>
+        </ul>
+  <!-- <ul class="collapsible" data-collapsible="accordion">
+   <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{report.name}}</div>
+      <div class="collapsible-body"><p>{{report.description}}</p></div>
+    </li>
+  </ul> -->
+
+	<!-- <table class="bordered highlight card-panel grey z-depth-5">
+		<thead>
+			<th>Name</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{report.name}}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table> -->
+<!-- <h5 align="center" class=" striped card-panel grey hoverable z-depth-5">  {{report.name}}- {{report.description}}</h5> -->
+
 </div>
+

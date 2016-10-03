@@ -3,14 +3,13 @@ import { Device } from '../shared/device';
 import { User } from '../shared/user';
 import { ApiService } from '../shared';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import {MaterializeDirective} from "angular2-materialize";
 
 @Component({
-  selector: 'incident-report', // <my-app></my-app>
-  templateUrl: './incident_report.component.html',
+  selector: 'loan_history', // <my-app></my-app>
+  templateUrl: './loan_history.component.html',
   styleUrls: ['./device.component.scss'],
 })
-export class IncidentReportComponent implements OnInit {
+export class LoanHistoryComponent implements OnInit {
   all_groups: Device[] = [];
   device: Device;
 
