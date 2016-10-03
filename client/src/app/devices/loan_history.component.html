@@ -1,3 +1,10 @@
 <div *ngFor='let loan of device?.loans'>
-  <h5 align="center" class=" striped card-panel grey hoverable z-depth-5">{{loan.name}}</h5>
+	<ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div align="center" class="collapsible-header card-panel grey"><i class="material-icons"></i>{{loan.name}}</div>
+      <div align="center" class="collapsible-body"><p>Signature</p></div>
+    </li>
+  </ul>
 </div>
+
+

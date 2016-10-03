@@ -4,7 +4,9 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import {MaterializeDirective} from "angular2-materialize";
+
+import 'materialize-css';
+import {MaterializeDirective} from 'angular2-materialize';
 
 
 import { AppComponent } from './app.component';

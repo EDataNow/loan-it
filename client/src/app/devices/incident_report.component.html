@@ -1,18 +1,11 @@
 <div *ngFor='let report of device?.incident_reports'>
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-          </li>
-          <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-          </li>
-        </ul>
+	<ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div align="center" class="collapsible-header card-panel grey"><i class="material-icons">sentiment_dissatisfied</i>{{report.name}}</div>
+      <div align="center" class="collapsible-body"><p>{{report.description}}</p></div>
+    </li>
+  </ul>
+
   <!-- <ul class="collapsible" data-collapsible="accordion">
    <li>
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{report.name}}</div>
