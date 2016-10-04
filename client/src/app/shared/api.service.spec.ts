@@ -1,18 +1,26 @@
 import {
+	fakeAsync,
   inject,
   TestBed
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import {
+	RequestMethod,
   BaseRequestOptions,
   ConnectionBackend,
-  Http
+  Http,
+  Response,
+  ResponseOptions,
 } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
+import { MockBackend, MockConnection,  } from '@angular/http/testing';
 
 // Load the implementations that should be tested
 import { ApiService } from './api.service';
 import { UserService } from './user.service';
+import { Device } from './device';
+import { User } from './user';
+
+
 
 
 describe('Api Service', () => {
@@ -38,21 +46,90 @@ describe('Api Service', () => {
     expect(api.GROUP_URL).toBe('https://loan-it.herokuapp.com/api/groups');
   }));
 
-  it('Api Service ', inject([ApiService, Http], (api) => {
+  it('Api Service USER URL', inject([ApiService, Http], (api) => {
     expect(api.USER_URL).toBe('https://loan-it.herokuapp.com/api/users');
   }));
 
+  it('should use an HTTP call to obtain Devices',
+    inject(
+      [ApiService, MockBackend],
+      fakeAsync((api: ApiService, backend: MockBackend) => {
+        backend.connections.subscribe((connection: MockConnection) => {
 
-  // it('should have a title', inject([ Home ], (home: Home) => {
-  //   expect(!!home.title).toEqual(true);
-  // }));
+          expect(connection.request.method).toBe(RequestMethod.Get);
+          expect(connection.request.url).toBe(
+            'https://loan-it.herokuapp.com/api/groups');
+        });
 
-  // it('should log ngOnInit', inject([ Home ], (home: Home) => {
-  //   spyOn(console, 'log');
-  //   expect(console.log).not.toHaveBeenCalled();
+        api.obtainDevices();
+      })));
 
-  //   home.ngOnInit();
-  //   expect(console.log).toHaveBeenCalled();
-  // }));
+  it('should use an HTTP call to obtain Users',
+    inject(
+      [ApiService, MockBackend],
+      fakeAsync((api: ApiService, backend: MockBackend) => {
+        backend.connections.subscribe((connection: MockConnection) => {
+
+          expect(connection.request.method).toBe(RequestMethod.Get);
+          expect(connection.request.url).toBe(
+            'https://loan-it.herokuapp.com/api/users');
+        });
+
+        api.obtainUsers();
+      })));
+
+  it('should check to obtainUsers() response > 0 (a.k.a has data)',
+    inject(
+      [ApiService, MockBackend],
+      fakeAsync((api: ApiService, backend: MockBackend) => {
+        backend.connections.subscribe((connection: MockConnection) => {
+          expect(Response.length).toBeGreaterThan(0);
+        });
+
+        api.obtainUsers();
+      })));
+
+  it('should check to obtainUsers() response > 0 (a.k.a has data)',
+    inject(
+      [ApiService, MockBackend],
+      fakeAsync((api: ApiService, backend: MockBackend) => {
+        backend.connections.subscribe((connection: MockConnection) => {
+
+        new mockResponseBody: User[] = [{
+          id: 1,
+          name: 'Saim',
+          email: 'saim@saim.com'
+        }];
+
+        let response = new ResponseOptions({body: JSON.stringify(mockResponseBody)});
+        connection.mockRespond(new Response(response));
+      });
+        api.obtainUsers()
+           .subscribe(User => {
+          expect(User).toContain('Saim');
+        });
+      })));
+
+
+  // it('should parse the server response correctly', inject(
+  //   [ApiService, MockBackend],
+  //   fakeAsync((api: ApiService, backend: MockBackend) => {
+  //     backend.connections.subscribe((connection: MockConnection) => {
+
+  //       new mockResponseBody: Device[] = [{
+  //         id: 1,
+  //         name: 'Testing IR Control'
+  //       }];
+
+  //       let response = new ResponseOptions({body: JSON.stringify(mockResponseBody)});
+  //       connection.mockRespond(new Response(response));
+  //     });
+
+  //     api.showDevice(86)
+  //       .subscribe(device => {
+  //         expect(device.name).toEqual('Testing IR Control');
+  //         expect(device.id).toEqual(86);
+  //       });
+  //   })));
 
 });

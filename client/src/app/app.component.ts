@@ -6,7 +6,6 @@ import { Http } from '@angular/http'
 
 @Component({
   selector: 'my-app', // <my-app></my-app>
-  providers: [UserService, Http],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
