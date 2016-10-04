@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { UserService } from './shared/user.service';
 
 @Component({
@@ -9,17 +8,9 @@ import { UserService } from './shared/user.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  private userNameArray: Array<string> = new Array<string>();
-  private userName: Array<string>
+  private name: string
 
   constructor(private userService: UserService, private router: Router) { 
-  }
-
-  ngOnInit() {
-    this.userService.nameCollection$.subscribe(updatedName => {
-      this.userNameArray = updatedName;
-  });
-  this.userService.loadName();
+    this.name = localStorage['user_name']  
   }
 }
