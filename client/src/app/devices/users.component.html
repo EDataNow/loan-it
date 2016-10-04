@@ -1,0 +1,43 @@
+<div *ngFor = 'let user of all_users'>
+	<div *ngIf='user.admin'>
+		<h3 class="card-panel grey z-depth 5"><i class="material-icons">sentiment_very_dissatisfied</i>{{user.name}}</h3>
+	</div>
+</div>
+
+<div *ngFor="let group of all_groups">
+  <h3 align="center" class='card-panel black z-depth-5'>{{group.name}}</h3>
+  <div *ngFor = "let device of group.devices">
+   <h3 align="center" class='card-panel black z-depth-5'>{{device.loanee_name}}</h3>
+		  <table class="bordered highlight card-panel grey z-depth-5">
+			    <tbody>
+		        <tr>
+		          <div class="row">
+			          <div class='col s6'>
+			           	<td>
+			           	  <div *ngIf='device.working_status'>
+			           	    <i class="material-icons">forward</i>
+			           	 	</div>
+			           		<div *ngIf='!device.working_status'>
+			           	    <i class="material-icons">sentiment_very_dissatisfied</i>
+			           	 	</div>
+			           	</td>
+			           	<td>{{device.name}}</td>
+			          </div>
+			        </div>
+		        </tr>
+			    </tbody>
+			  </table>
+  </div>
+</div>
+
+<!--
+<div class="col s6" align="right">
+			         	 <div *ngIf = 'device.loanee_name'>
+				          	<td>{{device.loanee_name}}</td>
+				          	<td (click)="relinquishLoan(device)"><a>Relinquish Device</a></td>
+				          </div>
+				         <div *ngIf = '!device.loanee_name'>
+				           <td style="color: green">Unassigned</td>
+				           <td (click)="createLoan(device)"><a><i class="material-icons">add_circle_outline</i></a></td>
+				         </div>
+ -->

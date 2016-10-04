@@ -19,6 +19,7 @@ import { RelinquishLoanComponent } from './devices/relinquish_loan.component';
 import { IncidentReportComponent } from './devices/incident_report.component';
 import { CreateIncidentReportComponent } from './devices/create_incident_report.component';
 import { LoanHistoryComponent } from './devices/loan_history.component';
+import { UsersComponent } from './devices/users.component'
 
 
 import { LoginComponent } from './login.component';
@@ -48,7 +49,8 @@ import { routing } from './app.routing';
     RelinquishLoanComponent,
     IncidentReportComponent,
     CreateIncidentReportComponent,
-    LoanHistoryComponent
+    LoanHistoryComponent,
+    UsersComponent
   ],
   providers: [
     ApiService, LoggedInGuard, UserService, LoginCheck
