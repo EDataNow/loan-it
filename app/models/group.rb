@@ -15,4 +15,12 @@ class Group < ApplicationRecord
 	def name_of_group
 		try(:group).try(:name)
 	end
+
+	def devices_names
+    devices.collect(&:name)
+  end
+
+  def groups_users
+  	users.collect(&:name)
+  end
 end

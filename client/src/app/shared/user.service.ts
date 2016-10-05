@@ -16,7 +16,7 @@ export class UserService {
 
         return this.http
             .post(
-                'https://loan-it.herokuapp.com/users/sign_in',
+                'http://localhost:3000/users/sign_in',
                 JSON.stringify({ email, password }),
                 { headers }
             )

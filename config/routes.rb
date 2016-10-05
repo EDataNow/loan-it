@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1,
               constraints: ApiConstraints.new(version: 1, default: true) do
+      get '/usersindex' => 'users#usersindex'
       resources :users, only: [:index]
       resources :groups, only: [:index]
       resources :devices, only: [:index, :show, :create] do

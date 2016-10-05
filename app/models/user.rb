@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 
   has_many :devices, through: :loans
 
-  has_many :groups
+  belongs_to :group
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
