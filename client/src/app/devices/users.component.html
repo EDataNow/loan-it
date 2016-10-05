@@ -7,27 +7,40 @@
 <div *ngFor="let group of all_groups">
   <h3 align="center" class='card-panel black z-depth-5'>{{group.name}}</h3>
   <div *ngFor = "let device of group.devices">
-   <h3 align="center" class='card-panel black z-depth-5'>{{device.loanee_name}}</h3>
-		  <table class="bordered highlight card-panel grey z-depth-5">
-			    <tbody>
-		        <tr>
-		          <div class="row">
-			          <div class='col s6'>
-			           	<td>
-			           	  <div *ngIf='device.working_status'>
-			           	    <i class="material-icons">forward</i>
-			           	 	</div>
-			           		<div *ngIf='!device.working_status'>
-			           	    <i class="material-icons">sentiment_very_dissatisfied</i>
-			           	 	</div>
-			           	</td>
-			           	<td>{{device.name}}</td>
-			          </div>
-			        </div>
-		        </tr>
-			    </tbody>
-			  </table>
+	  <table class="bordered highlight card-panel grey z-depth-5">
+		    <tbody>
+	        <tr>
+	          <div class="row">
+		          <div class='col s6'>
+		           	<td>
+		           	  <div *ngIf='device.working_status'>
+		           	    <i class="material-icons">forward</i>
+		           	 	</div>
+		           		<div *ngIf='!device.working_status'>
+		           	    <i class="material-icons">sentiment_very_dissatisfied</i>
+		           	 	</div>
+		           	</td>
+		           	<td>{{device.name}}</td>
+		          </div>
+		        </div>
+          </tr>
+		    </tbody>
+		  </table>
   </div>
+    <div *ngFor="let users of group.users">
+      <div *ngIf='users.device_names.length > 0'>
+        <h3 align="center" class='card-panel blue z-depth-5'>{{users.name}}</h3>
+        <table class="bordered highlight card-panel grey z-depth-5">
+          <tbody>
+            <div *ngFor="let device of users.device_names">
+              <tr>
+                <td>{{device}}</td>
+              </tr>
+            </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>
 
 <!--

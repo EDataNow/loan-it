@@ -21,7 +21,6 @@ export class UsersComponent implements OnInit {
     this.api.obtainUsers()
         .subscribe((data: User[]) => this.all_users = data);
 
-    console.log(this.all_users);
   }
 
   constructor(private api: ApiService, private router: Router, private route: ActivatedRoute) {
