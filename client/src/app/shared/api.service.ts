@@ -19,8 +19,8 @@ export class ApiService {
 
   private GROUP_URL = 'https://loan-it.herokuapp.com/api/groups';
   private DEVICE_CREATION_URL = 'https://loan-it.herokuapp.com/api/devices';
-  private USER_URL = 'https://loan-it.herokuapp.com/api/users'
-  private USERS_INDEX_URL = 'https://loan-it.herokuapp.com/api/usersindex'
+  private USER_URL = 'https://loan-it.herokuapp.com/api/users';
+  private USERS_INDEX_URL = 'https://loan-it.herokuapp.com/api/usersindex';
 
 
   constructor(private http: Http) { }
@@ -47,6 +47,7 @@ export class ApiService {
                .map((resp: Response) => resp.json())
                .catch(this.handleError);
     }
+
 
     showDevice(id: number): Observable<Device> {
     return this.http.get(`https://loan-it.herokuapp.com/api/devices/${id}`)
