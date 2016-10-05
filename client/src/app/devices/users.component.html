@@ -4,53 +4,31 @@
 	</div>
 </div>
 
-<div *ngFor="let group of all_groups">
-  <h3 align="center" class='card-panel black z-depth-5'>{{group.name}}</h3>
-  <div *ngFor = "let device of group.devices">
-	  <table class="bordered highlight card-panel grey z-depth-5">
-		    <tbody>
-	        <tr>
-	          <div class="row">
-		          <div class='col s6'>
-		           	<td>
-		           	  <div *ngIf='device.working_status'>
-		           	    <i class="material-icons">forward</i>
-		           	 	</div>
-		           		<div *ngIf='!device.working_status'>
-		           	    <i class="material-icons">sentiment_very_dissatisfied</i>
-		           	 	</div>
-		           	</td>
-		           	<td>{{device.name}}</td>
-		          </div>
-		        </div>
-          </tr>
-		    </tbody>
-		  </table>
-  </div>
-    <div *ngFor="let users of group.users">
-      <div *ngIf='users.device_names.length > 0'>
-        <h3 align="center" class='card-panel blue z-depth-5'>{{users.name}}</h3>
-        <table class="bordered highlight card-panel grey z-depth-5">
-          <tbody>
-            <div *ngFor="let device of users.device_names">
-              <tr>
-                <td>{{device}}</td>
-              </tr>
-            </div>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<div *ngFor="let group of all_users">
+<div *ngIf='!group.admin'>
+	<h3 align="center" class='card-panel black z-depth-5'>{{group.name}}</h3>
+		<div *ngFor="let user of group.users">
+			<h3 align="center" class='card-panel blue z-depth-5'>{{user.name}}</h3>
+				<div *ngFor="let device of user.devices">
+					<div *ngIf='device.status'>
+  					<table class="bordered highlight card-panel green z-depth-5">
+  						<tbody>
+  							<tr>
+  								<td><i class="material-icons">stay_current_portrait</i> {{device.name}}</td>
+  							</tr>
+  						</tbody>
+  					</table>
+  				</div>
+  				<div *ngFor="let device of user.devices">
+					<div *ngIf='!device.status'>
+  					<table class="bordered highlight card-panel red z-depth-5">
+  						<tbody>
+  							<tr>
+  								<td><i class="material-icons">broken_image</i> {{device.name}}</td>
+  							</tr>
+  						</tbody>
+  					</table>
+  				</div>
+        </div>
+		</div>
 </div>
-
-<!--
-<div class="col s6" align="right">
-			         	 <div *ngIf = 'device.loanee_name'>
-				          	<td>{{device.loanee_name}}</td>
-				          	<td (click)="relinquishLoan(device)"><a>Relinquish Device</a></td>
-				          </div>
-				         <div *ngIf = '!device.loanee_name'>
-				           <td style="color: green">Unassigned</td>
-				           <td (click)="createLoan(device)"><a><i class="material-icons">add_circle_outline</i></a></td>
-				         </div>
- -->

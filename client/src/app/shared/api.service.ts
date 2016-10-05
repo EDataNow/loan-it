@@ -20,6 +20,7 @@ export class ApiService {
   private GROUP_URL = 'http://localhost:3000/api/groups';
   private DEVICE_CREATION_URL = 'http://localhost:3000/api/devices';
   private USER_URL = 'http://localhost:3000/api/users'
+  private USERS_INDEX_URL = 'http://localhost:3000/api/usersindex'
 
 
   constructor(private http: Http) { }
@@ -37,6 +38,12 @@ export class ApiService {
 
     obtainUsers(): Observable<User[]> {
     return this.http.get(this.USER_URL)
+               .map((resp: Response) => resp.json())
+               .catch(this.handleError);
+    }
+
+    obtainUsersIndex(): Observable<User[]> {
+    return this.http.get(this.USERS_INDEX_URL)
                .map((resp: Response) => resp.json())
                .catch(this.handleError);
     }
