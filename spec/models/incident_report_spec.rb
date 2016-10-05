@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
-#  usable     :boolean
+#  usable      :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer

@@ -15,10 +15,11 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  group_id               :integer
 #  admin                  :boolean          default(FALSE)
 #  name                   :string
 #  image                  :string
+#  auth_token             :string           default("")
+#  group_id               :integer
 #
 
 class User < ActiveRecord::Base
